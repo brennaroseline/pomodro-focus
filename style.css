@@ -715,3 +715,74 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* =================================
+   MORI FOCUS - FULL WIDTH STATISTICS
+================================= */
+
+.stats-section {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.stats-section .section-heading {
+    margin-bottom: 16px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+
+.stat-card {
+    min-width: 0;
+    min-height: 145px;
+    padding: 22px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.stat-card span {
+    font-size: 25px;
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+/* Footer below all four cards */
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 18px;
+    padding: 12px 0 4px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 750px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 380px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
