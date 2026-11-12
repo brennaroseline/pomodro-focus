@@ -1,0 +1,573 @@
+
+/* =================================
+   1. COLOR PALETTE & BASIC SETTINGS
+================================= */
+
+:root {
+    --creamy: #F3E9D7;
+    --expresso: #3B2A22;
+    --mocha: #7A553A;
+    --brown-dark: #311b14;
+    --forest: #3c2415;
+    --text: #4d343d;
+    --muted: #B08968;
+    --border: #ddd9ce;
+    --warm: #d6bfa6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--creamy);
+    color: var(--text);
+    font-family: times new roman, roman, serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+
+/* =================================
+   2. MAIN DASHBOARD
+================================= */
+
+.dashboard {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-icon {
+    font-size: 38px;
+    color: var(--mocha);
+}
+
+.brand h1 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    color: var(--forest);
+}
+
+.brand p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.date-display {
+    font-size: 13px;
+    color: var(--mocha);
+}
+
+
+/* =================================
+   3. MAIN GRID
+================================= */
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 22px;
+}
+
+.timer-card,
+.panel {
+    background: var(--brown-dark);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(64, 83, 68, 0.04);
+}
+
+.timer-card {
+    text-align: center;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--warm);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: times new roman, roman, serif;
+    color: var(--creamy);
+    font-size: 23px;
+}
+
+.timer-card h2 {
+    margin-bottom: 25px;
+}
+
+
+/* =================================
+   4. CIRCULAR TIMER
+================================= */
+
+.timer-circle {
+    width: 235px;
+    height: 235px;
+    border-radius: 50%;
+
+    background: conic-gradient(
+        var(--brown-dark) 0deg,
+        var(--brown-dark) 360deg
+    );
+
+    display: grid;
+    place-items: center;
+
+    margin: 0 auto 25px;
+    transition: background 0.3s;
+}
+
+.timer-inner {
+    width: 210px;
+    height: 210px;
+    background: var(--creamy);
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#timerDisplay {
+    font-family: times new roman, roman, serif;
+    font-size: 51px;
+    font-weight: bold;
+    color: var(--exspresso);
+    font-variant-numeric: tabular-nums;
+}
+
+#timerStatus {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+
+/* =================================
+   5. TIMER MODES & BUTTONS
+================================= */
+
+.timer-modes {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.mode-btn {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--warm);
+    padding: 9px 13px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.mode-btn.active {
+    background: var(--transparent);
+    color: white;
+    border-color: var(--border);
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    font-family: inherit;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.82;
+    transform: translateY(-1px);
+}
+
+.primary-btn,
+.secondary-btn {
+    border-radius: 12px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.primary-btn {
+    background: var(--forest);
+    color: white;
+    border: none;
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--creamy);
+    border: 1px solid var(--border);
+}
+
+.timer-note {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 23px;
+}
+
+
+/* =================================
+   6. RIGHT SIDE PANELS
+================================= */
+
+.side-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.flower {
+    font-size: 25px;
+    color: var(--creamy);
+}
+
+
+/* =================================
+   7. TO-DO LIST
+================================= */
+
+.todo-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.todo-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 10px;
+    outline: none;
+    color: var(--text);
+}
+
+.todo-form input:focus {
+    border-color: var(--brown-dark);
+}
+
+.todo-form button {
+    width: 42px;
+    border: none;
+    background: var(--brown-dark);
+    color: white;
+    border-radius: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px;
+    background: var(--creamy);
+    border-radius: 10px;
+}
+
+.todo-item input {
+    accent-color: var(--brown-dark);
+    cursor: pointer;
+}
+
+.todo-item span {
+    flex: 1;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.todo-item.done span {
+    text-decoration: line-through;
+    color: var(--text);
+}
+
+.delete-task {
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.todo-summary {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 16px;
+}
+
+
+
+/* =================================
+   8. MUSIC LIBRARY
+================================= */
+
+.music-panel {
+    background: var(--mocha);
+}
+
+.music-tabs {
+    display: flex;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.music-tab {
+    flex: 1;
+    padding: 11px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--forest);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.music-tab.active {
+    background: var(--forest);
+    color: white;
+    border-color: var(--forest);
+}
+
+.music-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.music-form label {
+    font-size: 12px;
+    color: var(--forest);
+}
+
+.music-form input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--creamy);
+    outline: none;
+    color: var(--text);
+    font-size: 12px;
+}
+
+.music-form input:focus {
+    border-color: var(--brown-dark);
+}
+
+.music-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: var(--forest);
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.music-player {
+    margin-top: 12px;
+    width: 100%;
+}
+
+.music-empty {
+    min-height: 120px;
+    border: 1px dashed var(--border);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--brown-dark);
+    text-align: center;
+    padding: 15px;
+}
+
+.music-empty span {
+    font-size: 28px;
+}
+
+.music-empty p {
+    font-size: 13px;
+}
+
+.music-empty small {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.music-player iframe {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+.music-player iframe.youtube-player {
+    height: 200px;
+}
+
+.music-player iframe.apple-player {
+    height: 175px;
+}
+
+.clear-music-btn {
+    margin-top: 12px;
+    background: transparent;
+    border: none;
+    color: var(--brown-dark);
+    cursor: pointer;
+    font-size: 11px;
+}
+
+/* =================================
+   9. STUDY STATISTICS
+================================= */
+
+.stats-section {
+    margin-top: 35px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.stat-card {
+    background: var(--creamy);
+    border: 1px solid var(--border);
+    padding: 21px;
+    border-radius: 18px;
+}
+
+.stat-card > span {
+    color: var(--brown-dark);
+    font-size: 21px;
+}
+
+.stat-card p {
+    font-size: 11px;
+    color: var(--warm);
+    margin-top: 12px;
+}
+
+.stat-card h3 {
+    font-family: Georgia, serif;
+    color: var(--forest);
+    font-size: 22px;
+    margin-top: 7px;
+}
+
+
+/* =================================
+   10. FOOTER
+================================= */
+
+footer {
+    text-align: center;
+    margin-top: 35px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* =================================
+   11. MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 750px) {
+
+    body {
+        padding: 22px 14px;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .date-display {
+        text-align: right;
+    }
+
+    .timer-card,
+    .panel {
+        padding: 24px 18px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .timer-circle {
+        width: 205px;
+        height: 205px;
+    }
+
+    .timer-inner {
+        width: 183px;
+        height: 183px;
+    }
+
+    #timerDisplay {
+        font-size: 43px;
+    }
+
+    .mode-btn {
+        padding: 8px 9px;
+    }
+
+}

@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mori Focus | Your Study Space</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="brand">
+                <span class="brand-icon">✿</span>
+                <div>
+                    <h1>ADINDA FOCUS</h1>
+                    <p>Your little space to grow.</p>
+                </div>
+            </div>
+
+            <div class="date-display" id="todayDate"></div>
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-grid">
+
+            <!-- TIMER SECTION -->
+            <section class="timer-card">
+
+                <p class="eyebrow">TIME TO FOCUS</p>
+
+                <h2 id="sessionTitle">Focus Session</h2>
+
+                <div class="timer-circle" id="timerCircle">
+
+                    <div class="timer-inner">
+                        <span id="timerDisplay">25:00</span>
+                        <small id="timerStatus">Ready when you are</small>
+                    </div>
+
+                </div>
+
+                <div class="timer-modes">
+
+                    <button class="mode-btn active" data-mode="focus">
+                        Focus
+                    </button>
+
+                    <button class="mode-btn" data-mode="short">
+                        Short Break
+                    </button>
+
+                    <button class="mode-btn" data-mode="long">
+                        Long Break
+                    </button>
+
+                </div>
+
+                <div class="timer-controls">
+
+                    <button id="startBtn" class="primary-btn">
+                        Start Focus
+                    </button>
+
+                    <button id="resetBtn" class="secondary-btn">
+                        Reset
+                    </button>
+
+                </div>
+
+                <p class="timer-note">
+                    One step at a time. You got this!
+                </p>
+
+            </section>
+
+
+            <!-- RIGHT COLUMN -->
+            <div class="side-column">
+
+                <!-- TO DO LIST -->
+                <section class="panel todo-panel">
+
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">YOUR DAILY PLAN</p>
+                            <h2>Today's Tasks</h2>
+                        </div>
+
+                        <span class="coffee">☕️</span>
+                    </div>
+
+                    <form id="todoForm" class="todo-form">
+
+                        <input
+                            type="text"
+                            id="todoInput"
+                            placeholder="What will you focus on?"
+                            maxlength="100"
+                        >
+
+                        <button type="submit">+</button>
+
+                    </form>
+
+                    <ul id="todoList" class="todo-list"></ul>
+
+                    <p id="todoSummary" class="todo-summary">
+                        0 tasks completed
+                    </p>
+
+                </section>
+
+
+                
+<!-- MUSIC LIBRARY -->
+<section class="panel music-panel">
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">YOUR FOCUS SOUND</p>
+            <h2>Music Library</h2>
+        </div>
+
+        <span class="music-icon">🎧</span>
+    </div>
+
+    <!-- Platform Selection -->
+    <div class="music-tabs">
+
+        <button
+            class="music-tab active"
+            data-platform="youtube"
+        >
+            YouTube
+        </button>
+
+        <button
+            class="music-tab"
+            data-platform="apple"
+        >
+            Apple Music
+        </button>
+
+    </div>
+
+    <!-- Playlist Input -->
+    <form id="musicForm" class="music-form">
+
+        <label for="musicUrl">
+            Paste your playlist link
+        </label>
+
+        <input
+            type="url"
+            id="musicUrl"
+            placeholder="https://..."
+            required
+        >
+
+        <button type="submit" id="loadMusicBtn">
+            Load Playlist
+        </button>
+
+    </form>
+
+    <!-- Player -->
+    <div id="musicPlayer" class="music-player">
+
+        <div class="music-empty">
+            <span>♫</span>
+            <p>Your peaceful music space</p>
+            <small>Choose a platform and load your playlist.</small>
+        </div>
+
+    </div>
+
+    <button id="clearMusicBtn" class="clear-music-btn">
+        Clear Playlist
+    </button>
+
+</section>
+
+
+        <!-- STATISTICS -->
+        <section class="stats-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR LITTLE PROGRESS</p>
+                    <h2>Study Statistics</h2>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+                    <span>☀</span>
+                    <p>Today's Focus</p>
+                    <h3 id="todayFocus">0 min</h3>
+                </article>
+
+                <article class="stat-card">
+                    <span>◷</span>
+                    <p>Total Study Time</p>
+                    <h3 id="totalFocus">0 min</h3>
+                </article>
+
+                <article class="stat-card">
+                    <span>✿</span>
+                    <p>Completed Sessions</p>
+                    <h3 id="totalSessions">0</h3>
+                </article>
+
+                <article class="stat-card">
+                    <span>✓</span>
+                    <p>Tasks Completed</p>
+                    <h3 id="completedTasks">0</h3>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>Made with care, one focus session at a time. 🕰️</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
