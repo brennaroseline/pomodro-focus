@@ -571,3 +571,148 @@ footer {
     }
 
 }
+
+
+/* =================================
+   MORI FOCUS - COMPACT LANDSCAPE
+================================= */
+
+/* Main layout */
+body {
+    padding: 24px 20px;
+}
+
+.dashboard {
+    width: 100%;
+    max-width: 1250px;
+}
+
+.header {
+    margin-bottom: 22px;
+}
+
+/* Timer and right panels */
+.main-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.timer-card,
+.panel {
+    padding: 22px;
+    border-radius: 20px;
+    min-width: 0;
+}
+
+/* Smaller timer */
+.timer-circle {
+    width: 190px;
+    height: 190px;
+    margin-bottom: 18px;
+}
+
+.timer-inner {
+    width: 170px;
+    height: 170px;
+}
+
+#timerDisplay {
+    font-size: 43px;
+}
+
+.timer-card h2 {
+    margin-bottom: 18px;
+}
+
+/* Right side: horizontal panels */
+.side-column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    align-items: stretch;
+}
+
+.section-heading {
+    margin-bottom: 14px;
+}
+
+/* Today's tasks */
+.todo-form {
+    margin-bottom: 12px;
+}
+
+.todo-form input {
+    padding: 10px;
+}
+
+.todo-list {
+    gap: 7px;
+}
+
+.todo-item {
+    padding: 8px;
+}
+
+/* Focus sound */
+.music-tabs {
+    gap: 6px;
+    margin: 12px 0;
+}
+
+.music-tab {
+    padding: 9px 5px;
+    font-size: 11px;
+}
+
+.music-empty {
+    min-height: 90px;
+    padding: 10px;
+}
+
+.music-player iframe.youtube-player {
+    height: 150px;
+}
+
+.music-player iframe.apple-player {
+    height: 150px;
+}
+
+/* Statistics */
+.stats-section {
+    margin-top: 20px;
+}
+
+.stats-grid {
+    gap: 12px;
+}
+
+.stat-card {
+    padding: 15px;
+}
+
+/* Fix existing variable typos */
+#timerDisplay {
+    color: var(--expresso);
+}
+
+.mode-btn.active {
+    background: var(--mocha);
+}
+
+/* Responsive */
+@media (max-width: 750px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .side-column {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .side-column {
+        grid-template-columns: 1fr;
+    }
+}
